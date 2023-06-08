@@ -3,6 +3,7 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+
 }
 
 .logo {
@@ -39,4 +40,16 @@
 
 .read-the-docs {
   color: #888;
+}
+.imgm{
+  width: 250px;
+}
+.ulgrid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+}
+.div{
+  border: 1px solid grey;
 }
