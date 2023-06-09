@@ -53,3 +53,7 @@
 .div{
   border: 1px solid grey;
 }
+.agregar{
+  display: flex;
+  flex-direction: column;
+}

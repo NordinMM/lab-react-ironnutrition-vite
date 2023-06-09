@@ -1,7 +1,5 @@
 import "./App.css";
-import foodsJson from "./foods.json";
-import FoodBox from "./components/FoodBox";
-import { useState } from "react";
+import FoodList from "./components/FoodList";
 function App() {
   
 const [foods, setfoods] = useState([...foodsJson]);
@@ -10,12 +8,14 @@ const [foods, setfoods] = useState([...foodsJson]);
     
   }
   const components = foods.map((f) =><FoodBox key={f.id} food={f} onDelete={handleDelete} /> )
-  
-  
+  const handleCreateFood = (createdFood) => {
+    console.log('Nueva comida:',  createdFood);
+    setfoods([...foods, createdFood]);
+  }
   return (
     <div className="App">
       <h1>LAB | React IronNutrition</h1>
-      <ul className="ulgrid">{components}</ul>
+      <FoodList/>
     </div>
   );
 }
