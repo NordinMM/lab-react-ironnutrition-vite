@@ -44,11 +44,12 @@
 .imgm{
   width: 250px;
 }
-.ulgrid{
+.grid{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 10px;
   grid-auto-rows: minmax(100px, auto);
+  gap: 1rem;
 }
 .div{
   border: 1px solid grey;
@@ -56,4 +57,8 @@
 .agregar{
   display: flex;
   flex-direction: column;
+}
+.button1{
+  gap: 1rem;
+  padding: -10px;
 }
