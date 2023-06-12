@@ -29,16 +29,21 @@ export default function FoodList() {
     }
 
     const handleFilter = (e) => {
-        // Cada vez que se ejecuta esta función, es que ha cambiado el valor del input search
 
+        const keyword = e.target.value;
+        setSearch(keyword)
+        // Cada vez que se ejecuta esta función, es que ha cambiado el valor del input search
+        const searchFoods = foodsJson.filter(f => new RegExp (keyword, 'i').test(f.name))
+        setFoods(searchFoods)     
+    
         // Utiliza adecuadamente el método filter para actualizar el array de foods que contengan la subcadena de texto de e.target.value
-        console.log(e.target.value);
-    }
+        console.log(e.target.value); 
+    };
 
     return <>
         <AddFoodForm onCreateFood={handleCreateFood} />
         {/** Iterate over the foods array and render a <FoodBox /> component for each individual food item. */}
-        <Search onSearchChange={handleFilter} />
+        <Search value={search} onSearchChange={handleFilter} />
         <Row style={{
             justifyContent: "center"
         }}>
